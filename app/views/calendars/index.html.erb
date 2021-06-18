@@ -5,23 +5,22 @@
   <%= f.text_field :plan, class: 'text-input' %>
   <%= f.submit '保存' %>
 <% end %>
-  <!-- Issue4~6の解消をmasterbrunchにて行ったため変更点を作るため記述します -->
-<div>
-  <div class='calendar'>
-    <% @week_days.each do |day| %>
-      <div class='item'>
-        <div class='date'>
-          <%= day[:month] %>/<%= day[:date] %><%= day[:wdays] %>
-        </div>
-        <ul class='content'>
-        <% if day[:plans].length != 0 %>
-          <% day[:plans].each do |plan| %>
-            <li class='plan-list'>・<%= plan %></li>
-          <% end %>
-        <% end %>
-        </ul>
+
+<div class='calendar'>
+  <% @week_days.each do |day| %>
+    <div class='item'>
+      <div class='date'>
+        <%= day[:month] %>/<%= day[:date] %><%= day[:wdays] %>
       </div>
-    <% end %>
-  </div>
+      <ul class='content'>
+      <% if day[:plans].length != 0 %>
+        <% day[:plans].each do |plan| %>
+          <li class='plan-list'>・<%= plan %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
+
 
