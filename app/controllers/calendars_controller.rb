@@ -34,7 +34,6 @@ class CalendarsController < ApplicationController
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
-    second_training
 
       wday_num = Date.today.wday + x
       if 
